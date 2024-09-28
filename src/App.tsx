@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Tabs } from '@mantine/core';
+import Activepieces from './components/Activepieces';
+import GoogleDriveIntegration from './components/GoogleDriveIntegration';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ padding: '20px' }}>
+      <Tabs defaultValue="activepieces">
+        <Tabs.List>
+          <Tabs.Tab value="activepieces">Activepieces</Tabs.Tab>
+          <Tabs.Tab value="automatisch">Automatisch</Tabs.Tab>
+          <Tabs.Tab value="self-made">Self-made</Tabs.Tab>
+        </Tabs.List>
+
+        <Tabs.Panel value="activepieces" pt="xs">
+          <Activepieces />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="automatisch" pt="xs">
+          <h2>Automatisch</h2>
+          <p>This is the content for Automatisch.</p>
+        </Tabs.Panel>
+        <Tabs.Panel value="self-made" pt="xs">
+          <h2>Self-made</h2>
+          <GoogleDriveIntegration />
+        </Tabs.Panel>
+      </Tabs>
+    </div>
+  );
 }
 
-export default App
+export default App;
