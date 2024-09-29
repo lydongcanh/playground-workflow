@@ -45,7 +45,7 @@ const GoogleDriveIntegration: React.FC = () => {
 
   const renderFileList = () => {
     return files.map((file) => (
-      <Paper key={file.id} padding="sm" shadow="xs">
+      <Paper key={file.id} p="sm" shadow="xs">
         <Text>{file.name}</Text>
         <Text size="sm" color="dimmed">
           {file.mimeType === "application/vnd.google-apps.folder" ? "Folder" : "File"}
@@ -56,7 +56,7 @@ const GoogleDriveIntegration: React.FC = () => {
 
   return (
     <Container>
-      <Stack spacing="md">
+      <Stack p="md">
         {!user ? (
           <Button onClick={() => login()}>Connect to Google Drive</Button>
         ) : (
