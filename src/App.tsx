@@ -1,27 +1,20 @@
 import { Tabs } from '@mantine/core';
-import Activepieces from './components/Activepieces';
+import Workato from './components/Workato';
 import GoogleDriveIntegration from './components/GoogleDriveIntegration';
 
 function App() {
   return (
     <div style={{ padding: '20px' }}>
-      <Tabs defaultValue="activepieces">
+      <Tabs defaultValue="workato">
         <Tabs.List>
-          <Tabs.Tab value="activepieces">Activepieces</Tabs.Tab>
-          <Tabs.Tab value="automatisch">Automatisch</Tabs.Tab>
-          <Tabs.Tab value="self-made">Self-made</Tabs.Tab>
+          <Tabs.Tab value="workato">Workato</Tabs.Tab>
+          <Tabs.Tab value="in-house">In-house</Tabs.Tab>
         </Tabs.List>
 
-        <Tabs.Panel value="activepieces" pt="xs">
-          <Activepieces />
+        <Tabs.Panel value="workato" pt="xs">
+          <Workato />
         </Tabs.Panel>
-
-        <Tabs.Panel value="automatisch" pt="xs">
-          <h2>Automatisch</h2>
-          <p>This is the content for Automatisch.</p>
-        </Tabs.Panel>
-        <Tabs.Panel value="self-made" pt="xs">
-          <h2>Self-made</h2>
+        <Tabs.Panel value="in-house" pt="xs">
           <GoogleDriveIntegration />
         </Tabs.Panel>
       </Tabs>
